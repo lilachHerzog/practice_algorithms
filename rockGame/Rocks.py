@@ -22,8 +22,8 @@ class Rocks:
             self.takePile(player, 0)
         else:
             self.takePile(player, -1)
-        playerIndex = (list(self.rocks).index(player) + 1) % 2 # find the index of the player
-        player = list(self.rocks)[playerIndex % 2] # get the next player by index (only 2 players, so % 2)
+        playerIndex = list(self.rocks).index(player) # find the index of the player
+        player = list(self.rocks)[(playerIndex + 1) % 2] # get the next player by index (only 2 players, so % 2)
         return self.findBestEdge(player)
 
     def canWin(self):
